@@ -1,0 +1,125 @@
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; 
+    box-shadow: 0 0 20px rgba(0,0,0,.5);
+    padding: 10px 100px;
+    background: #fff;
+    z-index: 100;
+}
+.header_logo {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 8px; 
+}
+.header_logo span {
+    color: #000;
+    font-weight: 600;
+    font-size: 20px;
+}
+.header_icon {
+    color: #016f97 ;
+    font-size: 20px;
+}
+.header_links {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    list-style-type: none;
+    text-transform: capitalize;
+}
+.header_link {
+    font-size: 13px;
+    color: gray;
+    text-decoration: none;
+    transition: .3s;
+}
+.header_link button {
+    background: linear-gradient(90deg,#18a5a7,#b6c0c5);
+    color: #fff;
+    padding: 7px 15px;
+    border-radius: 20px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-size: 12px;
+}
+.header_link:hover {
+    color: #016f97;
+}
+.menu-icon {
+    display: none;
+    font-size: 25px;
+    color: #3c7796 ;
+    cursor: pointer;
+}
+.navbar {
+    display: none;
+    position: absolute;
+    width: 70%;
+    top: -600px;
+    left: 50%;
+    padding: 20px 0;
+    transform: translateX(-50%);
+    border-radius: 10px;
+    background: #ededed;
+    box-shadow: 0 3px 2px  rgba(0,0,0,.3);
+    transition: .5s ease;
+}
+.navbar-active {
+    top: 60px;
+}
+.navbar-header_links {
+    display: flex;
+    justify-content: center;
+    flex-direction: column; 
+    align-items: center;
+    /* width: 100%; */
+    position: relative;
+    gap: 10px;
+    list-style-type: none;
+    text-transform: capitalize;
+}
+.navbar-header_link {
+    text-decoration: none;
+    font-size: 13px;
+    color: gray;
+    text-decoration: none;
+    font-weight: 600;
+}
+.navbar-header_link button {
+    background: linear-gradient(90deg,#18a5a7,#b6c0c5);
+    color: #fff;
+    padding: 7px 15px;
+    border-radius: 20px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-size: 12px;
+}
+@media screen and (min-width:767px) and (max-width:1023px) {
+    .header {
+        padding: 10px 20px;
+    }
+}
+@media screen and (max-width:767px) {
+    .header {
+        padding: 10px 20px;
+    }
+    .header_link {
+        display: none;
+    }
+    .menu-icon {
+        display: block;
+    }
+    .navbar {
+        display: block;
+    }
+}
