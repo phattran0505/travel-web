@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { Link } from "react-router-dom";
 import { LuMapPin } from "react-icons/lu";
 import { HiOutlineClipboardList } from "react-icons/hi";
 import "aos/dist/aos.css";
@@ -8,6 +9,7 @@ import pic1 from "../../assets/image/new-zealand.jpg";
 import pic2 from "../../assets/image/peru.jpg";
 import pic3 from "../../assets/image/austrailia.jpg";
 import pic4 from "../../assets/image/destination 1.jpg";
+
 import "./Main.css";
 function Main() {
   const data = [
@@ -102,9 +104,11 @@ function Main() {
         "Bali is and Indonesian Island and one of the best holiday destinations in the Indonesian archipelango. Bali is known for its volcanic moutains, history, art and culture, food, tepmples, and beautiful sandy beaches",
     },
   ];
+
   useEffect(() => {
     AOS.init({ duration: 2000 });
   }, []);
+
   return (
     <main>
       <h1 data-aos="fade-right" className="main-title">
@@ -113,7 +117,12 @@ function Main() {
       <div className="main-content">
         {data.map((item) => {
           return (
-            <div data-aos="fade-up" className="destination-box" key={item.id}>
+            <Link
+              to={`/destination/${item.id}`}
+              data-aos="fade-up"
+              className="destination-box"
+              key={item.id}
+            >
               <div className="destination-img">
                 <img src={item.src} alt="no-pics"></img>
               </div>
@@ -139,7 +148,7 @@ function Main() {
                   </button>
                 </div>
               </div>
-            </div>
+            </Link>
           );
         })}
       </div>
