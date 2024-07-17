@@ -13,7 +13,7 @@ import { useEffect, useState } from "react";
 function Home() {
   const [price, setPrice] = useState(0);
   useEffect(() => {
-    AOS.init({ duration: 2000 });
+    AOS.init({ duration: 2000,once:true });
   }, []);
   
   return (
